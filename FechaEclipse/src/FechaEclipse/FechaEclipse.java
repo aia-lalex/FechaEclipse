@@ -1,7 +1,10 @@
 /**
  * Tarea ENDES 04
  * Versión 1.0
- * 
+ * Versión 1.1 Refactorizado atributos
+ * Versión 1.2 Refactorizado parametros del constructor
+ * Versión 1.3 Refactorizado el metodo valida
+ * FechaEclipse
  */
 package FechaEclipse;
 /**
@@ -9,24 +12,30 @@ package FechaEclipse;
  *
  */
 public class FechaEclipse {
-	public int d;
-	public int m;
-	public int a;
+	public int dia;
+	public int mes;
+	public int año;
 
-	public FechaEclipse(int d, int m, int a) {
-		this.d = d;
-		this.m = m;
-		this.a = a;
+	public FechaEclipse(int dia, int mes, int año) {
+		this.dia = dia;
+		this.mes = mes;
+		this.año = año;
 	}
 	public boolean valida() {
-		if (d < 1 || d > 31)
+		return validar();
+	}
+	/**
+	 * @return Resultado de refactorizar el metodo valida
+	 */
+	public boolean validar() {
+		if (dia < 1 || dia > 31)
 			return false;
-		if (m < 1 || m > 12)
+		if (mes < 1 || mes > 12)
 			return false;
 	
 		// Determinamos la cantidad de días del mes:
 		int diasMes = 0;
-		switch (m) {
+		switch (mes) {
 		case 1:
 		case 3:
 		case 5:
@@ -44,13 +53,13 @@ public class FechaEclipse {
 			break;
 	
 		case 2: // Verificamos si el año es bisiesto
-			if ((a % 400 == 0) || ((a % 4 == 0) && (a % 100 != 0)))
+			if ((año % 400 == 0) || ((año % 4 == 0) && (año % 100 != 0)))
 				diasMes = 29;
 			else
 				diasMes = 28;
 			break;
 		}
-		if (d > diasMes)
+		if (dia > diasMes)
 			return false;
 		else
 			return true;
