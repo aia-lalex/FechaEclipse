@@ -5,6 +5,7 @@
  * Versión 1.2 Refactorizado parametros del constructor
  * Versión 1.3 Refactorizado el metodo valida
  * Versión 1.4 Refactorizado el metodo validar
+ * Versión 1.5 Refactorización para la cantidad de días del mes y si es bisiesto
  * FechaEclipse
  */
 package FechaEclipse;
@@ -16,6 +17,7 @@ public class FechaEclipse {
 	public int dia;
 	public int mes;
 	public int año;
+	
 
 	public FechaEclipse(int dia, int mes, int año) {
 		this.dia = dia;
@@ -34,7 +36,14 @@ public class FechaEclipse {
 		if (mes < 1 || mes > 12)
 			return false;
 	
-		// Determinamos la cantidad de días del mes:
+		return bisiesto();
+	}
+	/**
+	 * @return la cantidad de días del mes y si es bisiesto
+	 */
+	public boolean bisiesto() {
+		// Determinamos la cantidad de días del mes
+		
 		int diasMes = 0;
 		switch (mes) {
 		case 1:
@@ -64,5 +73,6 @@ public class FechaEclipse {
 			return false;
 		else
 			return true;
+		
 	}
 }
