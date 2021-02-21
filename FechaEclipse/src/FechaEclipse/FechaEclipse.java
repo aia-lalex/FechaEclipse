@@ -4,6 +4,7 @@
  * Versión 1.1 Refactorizado atributos
  * Versión 1.2 Refactorizado parametros del constructor
  * Versión 1.3 Refactorizado el metodo valida
+ * Versión 1.4 Refactorizado el metodo validar
  * FechaEclipse
  */
 package FechaEclipse;
@@ -22,12 +23,12 @@ public class FechaEclipse {
 		this.año = año;
 	}
 	public boolean valida() {
-		return validar();
+		return validarFecha();
 	}
 	/**
 	 * @return Resultado de refactorizar el metodo valida
 	 */
-	public boolean validar() {
+	public boolean validarFecha() {
 		if (dia < 1 || dia > 31)
 			return false;
 		if (mes < 1 || mes > 12)
