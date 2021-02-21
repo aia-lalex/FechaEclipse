@@ -18,7 +18,12 @@ public class FechaEclipse {
 	public int mes;
 	public int año;
 	
-
+/**
+ * 
+ * @param dia introducir un día válido
+ * @param mes introducir un mes válido
+ * @param año introducir un año válido
+ */
 	public FechaEclipse(int dia, int mes, int año) {
 		this.dia = dia;
 		this.mes = mes;
@@ -28,7 +33,8 @@ public class FechaEclipse {
 		return validarFecha();
 	}
 	/**
-	 * @return Resultado de refactorizar el metodo valida
+	 * @return Resultado de refactorizar el metodo valida fecha y mes
+	 * 
 	 */
 	public boolean validarFecha() {
 		if (dia < 1 || dia > 31)
@@ -39,7 +45,7 @@ public class FechaEclipse {
 		return bisiesto();
 	}
 	/**
-	 * @return la cantidad de días del mes y si es bisiesto
+	 * @return determina la cantidad de días del mes y si es bisiesto
 	 */
 	public boolean bisiesto() {
 		// Determinamos la cantidad de días del mes
